@@ -19,7 +19,9 @@
   },
   "dependencies": {
     "@mtproto/core": "3.4.0",
+    "dotenv": "^8.2.0",
     "morgan": "^1.9.1",
+    "node-localstorage": "^2.1.6",
     "restify": "^8.5.1",
     "restify-errors": "^8.0.2"
   }
