@@ -4,9 +4,10 @@ services:
     build: .
     restart: unless-stopped
     environment:
-      DATABASE_URL: postgres://postgres:trustme@172.17.0.1:5432/omlpi_dev
+      API_ID: foo
+      API_HASH: bar
     ports:
-      - "3000:1337"
+      - "50600:1337"
     volumes:
       - .:/home/node/app
       - /home/node/app/node_modules
