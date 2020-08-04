@@ -1,0 +1,28 @@
+{
+  "name": "telegram-channel-contacts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@mtproto/core": "3.4.0",
+    "dotenv": "^8.2.0",
+    "morgan": "^1.9.1",
+    "node-localstorage": "^2.1.6",
+    "restify": "^8.5.1",
+    "restify-errors": "^8.0.2"
+  }
+}

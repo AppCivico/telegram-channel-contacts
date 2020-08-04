@@ -1,0 +1,4 @@
+/auth_storage/*-auth
+/node_modules
+/.env
+/docker-compose.yml
