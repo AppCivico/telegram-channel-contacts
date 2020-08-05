@@ -10,7 +10,7 @@ const Storage = require('node-localstorage').LocalStorage;
 
 class TempLocalStorage {
     constructor(team_robot_id) {
-        this.storage = new Storage('/auth_storage/team_robot_id_' + team_robot_id + '-auth');
+        this.storage = new Storage('../storage/team_robot_id_' + team_robot_id + '-auth');
     }
 
     setItem(key, value) {
