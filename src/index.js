@@ -10,7 +10,7 @@ const Storage = require('node-localstorage').LocalStorage;
 
 class TempLocalStorage {
     constructor(team_robot_id) {
-        this.storage = new Storage('../storage/team_robot_id_' + team_robot_id + '-auth');
+        this.storage = new Storage('./auth_storage/team_robot_id_' + team_robot_id + '-auth');
     }
 
     setItem(key, value) {
@@ -72,6 +72,7 @@ const getChannels = async (team_robot_id) => {
         'messages.getAllChats',
         { except_ids: [] },
     );
+    console.log(chats);
 
     let channels = chats.chats.filter( chat => chat._ === 'channel' && chat.admin_rights );
     channels.forEach( channel => {
@@ -96,7 +97,7 @@ const getChannelContacts = async (team_robot_id, channel_id, access_hash, offset
         tempLocalStorage,
         'channels.getParticipants',
         {
-            offset: 0,
+            offset: offset,
             limit:  100,
             channel: {
                 _ : 'inputChannel',
@@ -158,7 +159,7 @@ server.get('/channel-contacts', async (req, res, next) => {
     const { team_robot_id, channel_id, access_hash, offset } = req.query;
 
     try {
-        const data = await getChannelContacts(team_robot_id, channel_id, access_hash);
+        const data = await getChannelContacts(team_robot_id, channel_id, access_hash, offset);
         res.send(data);
         return next();
     } catch (err) {

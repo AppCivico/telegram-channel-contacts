@@ -1,1 +1,0 @@
-# Aqui ficam os arquivos de auth.
