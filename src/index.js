@@ -59,7 +59,7 @@ const signIn = async (team_robot_id, phone, code, phone_code_hash) => {
         phone_number:    phone,
         phone_code:      code,
         phone_code_hash: phone_code_hash,
-    });z
+    });
 
     return signInReq;
 }
