@@ -74,7 +74,7 @@ const getChannels = async (team_robot_id) => {
     );
     console.log(chats);
 
-    let channels = chats.chats.filter( chat => chat._ === 'channel' && chat.access_hash );
+    let channels = chats.chats.filter( chat => chat._ === 'channel' && chat.admin_rights );
     channels.forEach( channel => {
             delete channel.pFlags;
             delete channel.version;
